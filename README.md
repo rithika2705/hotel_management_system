@@ -15,7 +15,7 @@ A web-based Java application to manage hotel reservations using JSP, Servlets, J
 
 
   ## 📁 Project Structure
-
+```
 HotelWebApp/
 ├── WebContent/
 │   ├── index.jsp
@@ -43,37 +43,38 @@ HotelWebApp/
     └── web.xml
 
 
-
+```
 
 ## 🗄️ Database Setup
 ### 1. Create Database
 
-sql
-CREATE DATABASE IF NOT EXISTS product_management;
-USE product_management;
+```sql
+CREATE DATABASE IF NOT EXISTS hotel_management;
+USE hotel_management;
+```
 
 
 ### 2. Create Table
 
-sql
-CREATE TABLE Products (
-    ProductID INT PRIMARY KEY,
-    ProductName VARCHAR(100),
-    Category VARCHAR(50),
-    Price DECIMAL(10,2),
-    Quantity INT
+```sql
+CREATE TABLE Reservations (
+    ReservationID INT PRIMARY KEY AUTO_INCREMENT,
+    CustomerName VARCHAR(100),
+    RoomNumber VARCHAR(10),
+    CheckIn DATE,
+    CheckOut DATE,
+    TotalAmount DECIMAL(10,2)
 );
 
+```
 ### 3. Insert Sample Data
-sql
-INSERT INTO Product (id, name, category, price, quantity) VALUES
-(101, 'Smart Watch', 'Electronics', 2000.00, 25),
-(102, 'Smartphone', 'Electronics', 20000.00, 15),
-(103, 'Comb', 'Beauty', 30.00, 25),
-(104, 'Pen', 'Stationery', 10.00, 300),
-(105, 'Face wash', 'Beauty', 45.00, 12),
-(106, 'Sunscreen', 'Beauty', 60.00, 65);
+```sql
+INSERT INTO Reservations (CustomerName, RoomNumber, CheckIn, CheckOut, TotalAmount) VALUES
+('John Doe', '101', '2025-06-01', '2025-06-05', 5000.00),
+('Jane Smith', '102', '2025-06-02', '2025-06-04', 3000.00),
+('Alice Brown', '103', '2025-06-03', '2025-06-06', 4500.00);
 
+```
 
 
 
